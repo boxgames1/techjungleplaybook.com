@@ -12,7 +12,7 @@
     </title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="alternate icon" href="favicon.ico" />
-    <meta name="theme-color" content="#00d4ff" />
+    <meta name="theme-color" content="#635BFF" />
 
     <!-- Open Graph for social sharing -->
     <meta
@@ -60,8 +60,13 @@
       body {
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
-        background: linear-gradient(135deg, #0f2419 0%, #1a3a2e 100%);
-        color: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #f6f9fc 0%,
+          #fafbfc 50%,
+          #ffffff 100%
+        );
+        color: #0a2540;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -70,6 +75,18 @@
         padding: 20px;
         position: relative;
         overflow-x: hidden;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 12px;
+        }
       }
 
       /* Animated background elements */
@@ -81,21 +98,55 @@
       }
 
       .bg-decoration-1 {
-        width: 400px;
-        height: 400px;
-        background: #00d4ff;
-        top: -100px;
-        right: -100px;
-        filter: blur(60px);
+        width: 500px;
+        height: 500px;
+        background: #635bff;
+        top: -150px;
+        right: -150px;
+        filter: blur(80px);
+        opacity: 0.08;
       }
 
       .bg-decoration-2 {
-        width: 300px;
-        height: 300px;
-        background: #00b8a9;
-        bottom: -50px;
-        left: -50px;
-        filter: blur(50px);
+        width: 400px;
+        height: 400px;
+        background: #7c3aed;
+        bottom: -100px;
+        left: -100px;
+        filter: blur(70px);
+        opacity: 0.08;
+      }
+
+      @media (max-width: 768px) {
+        .bg-decoration-1 {
+          width: 300px;
+          height: 300px;
+          top: -100px;
+          right: -100px;
+        }
+
+        .bg-decoration-2 {
+          width: 250px;
+          height: 250px;
+          bottom: -80px;
+          left: -80px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .bg-decoration-1 {
+          width: 200px;
+          height: 200px;
+          top: -50px;
+          right: -50px;
+        }
+
+        .bg-decoration-2 {
+          width: 180px;
+          height: 180px;
+          bottom: -50px;
+          left: -50px;
+        }
       }
 
       .container {
@@ -106,17 +157,23 @@
         z-index: 1;
       }
 
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 8px;
+        }
+      }
+
       .badge {
         display: inline-block;
-        background: rgba(99, 91, 255, 0.15);
-        color: #8a85ff;
+        background: rgba(99, 91, 255, 0.1);
+        color: #635bff;
         padding: 8px 20px;
         border-radius: 30px;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 0.5px;
         margin-bottom: 30px;
-        border: 1px solid rgba(99, 91, 255, 0.3);
+        border: 1px solid rgba(99, 91, 255, 0.2);
         animation: fadeInDown 0.8s ease-out;
       }
 
@@ -125,7 +182,7 @@
         font-weight: 800;
         line-height: 1.1;
         margin-bottom: 20px;
-        background: linear-gradient(135deg, #ffffff 0%, #8a85ff 100%);
+        background: linear-gradient(135deg, #0a2540 0%, #635bff 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -137,12 +194,24 @@
         animation: fadeInUp 0.8s ease-out 0.3s both;
       }
 
+      @media (max-width: 768px) {
+        .book-cover-wrapper {
+          margin: 30px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .book-cover-wrapper {
+          margin: 24px 0;
+        }
+      }
+
       .book-cover {
         max-width: 320px;
         width: 100%;
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
         transition: transform 0.3s ease;
       }
 
@@ -152,11 +221,25 @@
 
       .subtitle {
         font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-        color: #8899a6;
+        color: #525f7f;
         font-weight: 400;
         margin-bottom: 40px;
         line-height: 1.5;
         animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      @media (max-width: 768px) {
+        .subtitle {
+          margin-bottom: 32px;
+          padding: 0 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .subtitle {
+          margin-bottom: 24px;
+          padding: 0 8px;
+        }
       }
 
       .cta-section {
@@ -167,20 +250,22 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        background: linear-gradient(135deg, #00d4ff 0%, #00b8a9 100%);
-        color: #0a2540;
+        background: #635bff;
+        color: #ffffff;
         padding: 18px 40px;
         border-radius: 8px;
         font-size: 18px;
         font-weight: 700;
         text-decoration: none;
-        box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
       }
 
       .cta-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 15px 50px rgba(0, 212, 255, 0.5);
+        background: #5851ea;
+        box-shadow: 0 8px 20px rgba(99, 91, 255, 0.4);
       }
 
       .cta-button span {
@@ -195,18 +280,40 @@
         animation: fadeInUp 0.8s ease-out 0.8s both;
       }
 
+      @media (max-width: 768px) {
+        .features {
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          gap: 16px;
+          margin-top: 48px;
+        }
+      }
+
       .feature-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #ffffff;
+        border: 1px solid #e6ebf1;
         border-radius: 12px;
         padding: 30px 20px;
         transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      @media (max-width: 768px) {
+        .feature-card {
+          padding: 24px 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .feature-card {
+          padding: 20px 16px;
+        }
       }
 
       .feature-card:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(99, 91, 255, 0.4);
+        background: #f6f9fc;
+        border-color: #635bff;
         transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(99, 91, 255, 0.15);
       }
 
       .feature-icon {
@@ -218,21 +325,22 @@
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 8px;
-        color: #ffffff;
+        color: #0a2540;
       }
 
       .feature-text {
         font-size: 14px;
-        color: #8899a6;
+        color: #525f7f;
         line-height: 1.5;
       }
 
       .author-section {
         margin-top: 80px;
         padding: 60px 40px;
-        background: rgba(255, 255, 255, 0.03);
+        background: #ffffff;
         border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid #e6ebf1;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         animation: fadeInUp 0.8s ease-out 1s both;
       }
 
@@ -240,7 +348,19 @@
         font-size: 32px;
         font-weight: 700;
         margin-bottom: 40px;
-        color: #ffffff;
+        color: #0a2540;
+      }
+
+      @media (max-width: 768px) {
+        .author-section {
+          margin-top: 60px;
+          padding: 40px 32px;
+        }
+
+        .author-section h2 {
+          font-size: 28px;
+          margin-bottom: 32px;
+        }
       }
 
       .author-content {
@@ -250,19 +370,25 @@
         text-align: left;
       }
 
+      @media (max-width: 768px) {
+        .author-content {
+          gap: 32px;
+        }
+      }
+
       .author-photo {
         width: 160px;
         height: 160px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid rgba(0, 212, 255, 0.3);
+        border: 3px solid rgba(99, 91, 255, 0.2);
         flex-shrink: 0;
       }
 
       .author-bio p {
         font-size: 16px;
         line-height: 1.7;
-        color: #c4c4c4;
+        color: #525f7f;
         margin-bottom: 16px;
       }
 
@@ -273,7 +399,7 @@
       }
 
       .author-links a {
-        color: #00d4ff;
+        color: #635bff;
         text-decoration: none;
         font-weight: 600;
         font-size: 16px;
@@ -281,16 +407,17 @@
       }
 
       .author-links a:hover {
-        color: #00b8a9;
+        color: #5851ea;
         text-decoration: underline;
       }
 
       .newsletter-section {
         margin-top: 60px;
         padding: 50px 40px;
-        background: rgba(0, 212, 255, 0.05);
+        background: #ffffff;
         border-radius: 16px;
-        border: 1px solid rgba(0, 212, 255, 0.2);
+        border: 1px solid #e6ebf1;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         animation: fadeInUp 0.8s ease-out 1.2s both;
       }
 
@@ -298,12 +425,23 @@
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 12px;
-        color: #ffffff;
+        color: #0a2540;
+      }
+
+      @media (max-width: 768px) {
+        .newsletter-section {
+          margin-top: 48px;
+          padding: 40px 32px;
+        }
+
+        .newsletter-section h2 {
+          font-size: 24px;
+        }
       }
 
       .newsletter-description {
         font-size: 16px;
-        color: #8899a6;
+        color: #525f7f;
         margin-bottom: 30px;
       }
 
@@ -313,27 +451,35 @@
         gap: 12px;
         max-width: 400px;
         margin: 0 auto;
+        width: 100%;
+      }
+
+      @media (max-width: 480px) {
+        .newsletter-form {
+          max-width: 100%;
+        }
       }
 
       .form-input {
         padding: 14px 20px;
         border-radius: 6px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.05);
-        color: #ffffff;
+        border: 1px solid #e6ebf1;
+        background: #ffffff;
+        color: #0a2540;
         font-size: 16px;
         font-family: inherit;
         transition: border-color 0.2s ease, background 0.2s ease;
       }
 
       .form-input::placeholder {
-        color: #8899a6;
+        color: #8898aa;
       }
 
       .form-input:focus {
         outline: none;
-        border-color: #00d4ff;
-        background: rgba(255, 255, 255, 0.08);
+        border-color: #635bff;
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
       }
 
       .form-textarea {
@@ -346,17 +492,19 @@
         padding: 14px 32px;
         border-radius: 6px;
         border: none;
-        background: linear-gradient(135deg, #00d4ff 0%, #00b8a9 100%);
-        color: #0a2540;
+        background: #635bff;
+        color: #ffffff;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
       }
 
       .form-submit:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        background: #5851ea;
+        box-shadow: 0 8px 20px rgba(99, 91, 255, 0.4);
       }
 
       footer {
@@ -365,9 +513,9 @@
         margin-top: auto;
         margin-bottom: 20px;
         padding-top: 40px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid #e6ebf1;
         text-align: center;
-        color: #8899a6;
+        color: #8898aa;
         font-size: 14px;
       }
 
@@ -393,6 +541,22 @@
         }
       }
 
+      @media (max-width: 768px) {
+        .badge {
+          font-size: 13px;
+          padding: 7px 18px;
+        }
+
+        .cta-button {
+          padding: 16px 36px;
+          font-size: 17px;
+        }
+
+        .book-cover {
+          max-width: 280px;
+        }
+      }
+
       @media (max-width: 640px) {
         .features {
           grid-template-columns: 1fr;
@@ -409,7 +573,8 @@
         }
 
         .book-cover {
-          max-width: 240px;
+          max-width: 70%;
+          width: 70%;
         }
 
         .author-content {
@@ -432,6 +597,73 @@
 
         .newsletter-section {
           padding: 40px 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .badge {
+          font-size: 11px;
+          padding: 5px 14px;
+        }
+
+        .cta-button {
+          padding: 14px 28px;
+          font-size: 15px;
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .book-cover {
+          max-width: 85%;
+          width: 85%;
+        }
+
+        .author-section {
+          padding: 32px 16px;
+        }
+
+        .author-section h2 {
+          font-size: 24px;
+        }
+
+        .author-bio p {
+          font-size: 15px;
+        }
+
+        .newsletter-section {
+          padding: 32px 16px;
+        }
+
+        .newsletter-section h2 {
+          font-size: 22px;
+        }
+
+        .newsletter-description {
+          font-size: 15px;
+        }
+
+        .form-input {
+          font-size: 15px;
+          padding: 12px 16px;
+        }
+
+        .form-submit {
+          font-size: 15px;
+          padding: 12px 28px;
+          width: 100%;
+        }
+
+        .feature-title {
+          font-size: 16px;
+        }
+
+        .feature-text {
+          font-size: 13px;
+        }
+
+        footer {
+          font-size: 13px;
+          padding-top: 32px;
         }
       }
     </style>
@@ -613,14 +845,14 @@
           href="https://linkedin.com/in/oliverioap"
           target="_blank"
           rel="noopener"
-          style="color: #00d4ff; text-decoration: none; margin: 0 10px"
+          style="color: #635bff; text-decoration: none; margin: 0 10px"
           >LinkedIn</a
         >
         <a
           href="https://oliveralonso.dev"
           target="_blank"
           rel="noopener"
-          style="color: #00d4ff; text-decoration: none; margin: 0 10px"
+          style="color: #635bff; text-decoration: none; margin: 0 10px"
           >Portfolio</a
         >
       </div>
