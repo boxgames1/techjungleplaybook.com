@@ -263,6 +263,42 @@
         font-size: 24px;
       }
 
+      .author-page-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.2s ease;
+        margin-top: 16px;
+      }
+
+      .author-page-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(0, 212, 255, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+
+      @media (min-width: 640px) {
+        .cta-buttons {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+
       .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -684,15 +720,25 @@
       </p>
 
       <div class="cta-section">
-        <a
-          href="https://amazon.com/dp/B0GFNYMGPJ"
-          target="_blank"
-          rel="noopener"
-          class="cta-button"
-        >
-          <span>📖</span>
-          Get the Book on Amazon
-        </a>
+        <div class="cta-buttons">
+          <a
+            href="https://amazon.com/dp/B0GFNYMGPJ"
+            target="_blank"
+            rel="noopener"
+            class="cta-button"
+          >
+            <span>📖</span>
+            Get the Book on Amazon
+          </a>
+          <a
+            href="https://www.amazon.com/author/oliverap"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="author-page-btn"
+          >
+            Visit Author Page
+          </a>
+        </div>
       </div>
 
       <div class="features">
@@ -749,6 +795,12 @@
               management roles.
             </p>
             <div class="author-links">
+              <a
+                href="https://www.amazon.com/author/oliverap"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Amazon Author Page</a
+              >
               <a
                 href="https://linkedin.com/in/oliverioap"
                 target="_blank"
@@ -822,6 +874,13 @@
       <p>© 2026 Oliver Alonso. All rights reserved.</p>
       <p style="margin-top: 8px; font-size: 12px">ISBN: 9798242859104</p>
       <div style="margin-top: 12px">
+        <a
+          href="https://www.amazon.com/author/oliverap"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #00d4ff; text-decoration: none; margin: 0 10px"
+          >Amazon Author Page</a
+        >
         <a
           href="https://linkedin.com/in/oliverioap"
           target="_blank"
